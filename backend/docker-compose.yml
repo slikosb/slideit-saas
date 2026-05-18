@@ -3,8 +3,8 @@ services:
     image: postgres:16-alpine
     container_name: slideit-db
     environment:
-      POSTGRES_USER: slideit_user
-      POSTGRES_PASSWORD: slideit_password
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
       POSTGRES_DB: slideit_management
     ports:
       - "5432:5432"

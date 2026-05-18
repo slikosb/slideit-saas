@@ -1,0 +1,40 @@
+### 1. Créer le Coach de Surf
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "nom": "Slater",
+  "prenom": "Kelly",
+  "email": "kelly.coach@slideit.com",
+  "role": "MONITEUR",
+  "telephone": "0611223344"
+}
+
+###
+
+### 2. Créer l'Élève
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "nom": "Dupont",
+  "prenom": "Jean",
+  "email": "jean.eleve@email.com",
+  "role": "ELEVE",
+  "telephone": "0601020304"
+}
+
+###
+
+### 3. Planifier la Session de Surf
+POST http://localhost:8080/api/sessions
+Content-Type: application/json
+
+{
+  "discipline": "SURF",
+  "dateHeureDebut": "2026-06-01T10:00:00",
+  "dateHeureFin": "2026-06-01T12:00:00",
+  "statut": "PLANIFIEE",
+  "coach": { "id": 1 },
+  "eleve": { "id": 2 }
+}
