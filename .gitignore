@@ -1,0 +1,18 @@
+# IDEs et éditeurs
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Fichiers de build ou temporaires (on les affinera par dossier plus tard)
+target/
+node_modules/
+dist/
+.ext/
