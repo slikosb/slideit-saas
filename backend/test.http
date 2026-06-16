@@ -38,3 +38,38 @@ Content-Type: application/json
   "coach": { "id": 1 },
   "eleve": { "id": 2 }
 }
+
+### 4. Planifier la Session de skate
+POST http://localhost:8080/api/sessions
+Content-Type: application/json
+
+{
+  "discipline": "SKATE",
+  "dateHeureDebut": "2026-06-01T10:00:00",
+  "dateHeureFin": "2026-06-01T12:00:00",
+  "statut": "PLANIFIEE",
+  "coach": { "id": 1 },
+  "eleve": { "id": 2 }
+}
+
+### Inscription d'un nouvel élève
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "nom": "Dupont",
+  "prenom": "Jean",
+  "email": "jean.dupont@gmail.com",
+  "password": "monSuperMotDePasse123",
+  "role": "MONITEUR",
+  "telephone": "0601020304"
+}
+
+### Login d'un élève
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+"email": "jean.dupont@gmail.com",
+"password": "monSuperMotDePasse123"
+}
