@@ -5,23 +5,45 @@ export interface RegisterRequest {
   prenom: string;
   email: string;
   password: string;
-  telephone?: string; // Optionnel avec le "?"
-  role: "ELEVE" | "MONITEUR" | "ADMIN";
+  telephone?: string;
+  role?: string;
+}
+
+export interface LoginRequest {
+  email: string;
+  password: string;
 }
 
 export const AuthService = {
-  async register(payload: RegisterRequest): Promise<string> {
+  async register(data: RegisterRequest) {
     const response = await fetch(`${API_URL}/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(data),
     });
 
+    const result = await response.json();
+
     if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(errorText);
+      throw new Error(result.error || "Erreur lors de l'inscription");
     }
 
-    return response.text();
+    return result;
+  },
+
+  async login(data: LoginRequest) {
+    const response = await fetch(`${API_URL}/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.text();
+
+    if (!response.ok) {
+      throw new Error(result || "Erreur lors de la connexion");
+    }
+
+    return JSON.parse(result);
   },
 };

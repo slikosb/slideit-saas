@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+.font-bebas {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.font-inter {
+  font-family: "Inter", sans-serif;
+}
