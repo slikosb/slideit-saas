@@ -1,5 +1,7 @@
 package com.slideit.service;
 
+import com.slideit.dto.AuthResponseDto;
+import com.slideit.dto.LoginRequestDto;
 import com.slideit.dto.RegisterRequestDto;
 import com.slideit.enums.Role;
 import com.slideit.model.User;
@@ -32,5 +34,22 @@ public class AuthService {
         user.setPassword(hashedPassword);
 
         userRepository.save(user);
+    }
+
+    public AuthResponseDto login(LoginRequestDto request) {
+        User user = userRepository.findByEmail(request.getEmail())
+                .orElseThrow(() -> new IllegalArgumentException("Erreur : Indentifiants incorrects !"));
+
+        if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
+            throw new IllegalArgumentException("Erreur : Indentifiants incorrects !");
+        }
+
+        String fakeJwtToken = "fake-jwt-token-for-" + user.getEmail();
+
+        return new AuthResponseDto(
+                fakeJwtToken,
+                user.getEmail(),
+                user.getRole().name()
+        );
     }
 }

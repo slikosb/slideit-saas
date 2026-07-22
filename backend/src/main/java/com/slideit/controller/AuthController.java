@@ -44,24 +44,11 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequestDto request) {
-        Optional<User> userOpt = userRepository.findByEmail(request.getEmail());
-
-        if(userOpt.isEmpty()){
-            return ResponseEntity.status(401).body("Erreur : Indentifiants incorrects !");
+        try {
+            AuthResponseDto response = authService.login(request);
+            return ResponseEntity.ok(response);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(401).body(e.getMessage());
         }
-
-        User user = userOpt.get();
-
-        if(!passwordEncoder.matches(request.getPassword(), user.getPassword())){
-            return ResponseEntity.status(401).body("Erreur : Indentifiants incorrects !");
-        }
-
-        String fakeJwtToken = "fake-jwt-token-for-" + user.getEmail();
-
-        return ResponseEntity.ok(new AuthResponseDto(
-                fakeJwtToken,
-                user.getEmail(),
-                user.getRole().name()
-        ));
     }
 }
