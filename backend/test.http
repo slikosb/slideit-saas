@@ -73,3 +73,7 @@ Content-Type: application/json
 "email": "jean.dupont@gmail.com",
 "password": "monSuperMotDePasse123"
 }
+
+###
+GET http://localhost:8080/api/users
+Content-Type: application/json
