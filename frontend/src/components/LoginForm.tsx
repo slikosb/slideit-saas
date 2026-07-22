@@ -44,7 +44,7 @@ export function LoginForm() {
   };
 
   return (
-    <div className="relative z-10 w-full max-w-[420px] p-8 rounded-[28px] bg-[#a9c7c7]/35 backdrop-blur-xs border border-white/30 shadow-2xl">
+    <div className="relative z-10 w-full max-w-[420px] p-8 rounded-tl-[28px] rounded-br-[28px] bg-[#a9c7c7]/35 backdrop-blur-xs border border-white/30 shadow-2xl">
       <h2 className="font-bebas text-5xl text-[#0c2f34] text-center mb-6 tracking-wide uppercase">
         ALOHA.
       </h2>
@@ -63,7 +63,7 @@ export function LoginForm() {
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-full">
         <div className="flex flex-col gap-1">
-          <label className="text-[10px] font-bold text-[#0c2f34] uppercase tracking-wider pl-1">
+          <label className="font-inter text-[10px] font-medium text-[#0c2f34] tracking-wider pl-1">
             Adresse email
           </label>
           <input
@@ -72,12 +72,12 @@ export function LoginForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-3.5 py-2.5 rounded-xl bg-[#0b3c43] text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-2 focus:ring-amber-400"
+            className="w-full px-3.5 py-2.5 rounded-xl bg-[#0b3c43] text-[#B9D8CE] placeholder-[#B9D8CE]/60 text-xs focus:outline-none focus:ring-2 focus:ring-amber-400"
           />
         </div>
 
         <div className="flex flex-col gap-1">
-          <label className="text-[10px] font-bold text-[#0c2f34] uppercase tracking-wider pl-1">
+          <label className="font-inter text-[10px] font-medium text-[#0c2f34] tracking-wider pl-1">
             Mot de passe
           </label>
           <input
@@ -86,13 +86,13 @@ export function LoginForm() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="w-full px-3.5 py-2.5 rounded-xl bg-[#0b3c43] text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-2 focus:ring-amber-400"
+            className="w-full px-3.5 py-2.5 rounded-xl bg-[#0b3c43] text-[#B9D8CE] placeholder-[#B9D8CE]/60 text-xs focus:outline-none focus:ring-2 focus:ring-amber-400"
           />
         </div>
 
         <button
           type="submit"
-          className="w-full mt-2 py-3 rounded-full bg-[#f3b300] hover:bg-[#e0a400] text-[#0b3c43] font-extrabold text-xs tracking-wide uppercase transition-all shadow-md active:scale-[0.98]"
+          className="font-inter w-full mt-2 py-3 rounded-full bg-[#f3b300] hover:bg-[#e0a400] text-[#0b3c43] font-normal text-xs tracking-wide transition-all shadow-md active:scale-[0.98]"
         >
           Connexion
         </button>
@@ -101,7 +101,7 @@ export function LoginForm() {
       <div className="mt-5 text-[11px] text-[#0c2f34] font-medium text-center">
         Pas encore de compte ?{" "}
         <a href="/register" className="font-bold underline hover:opacity-80">
-          S'inscire'
+          S'inscire
         </a>
       </div>
     </div>

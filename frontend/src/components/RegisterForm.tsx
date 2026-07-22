@@ -64,7 +64,7 @@ export function RegisterForm() {
   };
 
   return (
-    <div className="relative z-10 w-full max-w-[420px] p-8 rounded-[28px] bg-[#a9c7c7]/35 backdrop-blur-xs border border-white/30 shadow-2xl">
+    <div className="relative z-10 w-full max-w-[420px] p-8 rounded-tl-[28px] rounded-br-[28px] bg-[#a9c7c7]/35 backdrop-blur-xs border border-white/30 shadow-2xl">
       <h2 className="font-bebas text-5xl text-[#0c2f34] text-center mb-6 tracking-wide uppercase">
         ALOHA.
       </h2>
@@ -84,36 +84,36 @@ export function RegisterForm() {
       <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-full">
         <div className="w-full flex gap-2.5">
           <div className="w-1/2 flex flex-col gap-1">
-            <label className="text-[10px] font-bold text-[#0c2f34] uppercase tracking-wider pl-1">
+            <label className="font-inter text-[10px] font-medium text-[#0c2f34] tracking-wider pl-1">
               Prénom
             </label>
             <input
               type="text"
-              placeholder="Antoine"
+              placeholder="Louise"
               value={prenom}
               onChange={(e) => setPrenom(e.target.value)}
               required
-              className="w-full px-3.5 py-2.5 rounded-xl bg-[#0b3c43] text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-2 focus:ring-amber-400"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-[#0b3c43] text-[#B9D8CE] placeholder-[#B9D8CE]/60 text-xs focus:outline-none focus:ring-2 focus:ring-amber-400"
             />
           </div>
 
           <div className="w-1/2 flex flex-col gap-1">
-            <label className="text-[10px] font-bold text-[#0c2f34] uppercase tracking-wider pl-1">
+            <label className="font-inter text-[10px] font-medium text-[#0c2f34] tracking-wider pl-1">
               Nom
             </label>
             <input
               type="text"
-              placeholder="Morin"
+              placeholder="Harel"
               value={nom}
               onChange={(e) => setNom(e.target.value)}
               required
-              className="w-full px-3.5 py-2.5 rounded-xl bg-[#0b3c43] text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-2 focus:ring-amber-400"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-[#0b3c43] text-[#B9D8CE] placeholder-[#B9D8CE]/60 text-xs focus:outline-none focus:ring-2 focus:ring-amber-400"
             />
           </div>
         </div>
 
         <div className="flex flex-col gap-1">
-          <label className="text-[10px] font-bold text-[#0c2f34] uppercase tracking-wider pl-1">
+          <label className="font-inter text-[10px] font-medium text-[#0c2f34] tracking-wider pl-1">
             Adresse email
           </label>
           <input
@@ -122,12 +122,12 @@ export function RegisterForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-3.5 py-2.5 rounded-xl bg-[#0b3c43] text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-2 focus:ring-amber-400"
+            className="w-full px-3.5 py-2.5 rounded-xl bg-[#0b3c43] text-[#B9D8CE] placeholder-[#B9D8CE]/60 text-xs focus:outline-none focus:ring-2 focus:ring-amber-400"
           />
         </div>
 
         <div className="flex flex-col gap-1">
-          <label className="text-[10px] font-bold text-[#0c2f34] uppercase tracking-wider pl-1">
+          <label className="font-inter text-[10px] font-medium text-[#0c2f34] tracking-wider pl-1">
             Mot de passe
           </label>
           <input
@@ -136,12 +136,12 @@ export function RegisterForm() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="w-full px-3.5 py-2.5 rounded-xl bg-[#0b3c43] text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-2 focus:ring-amber-400"
+            className="w-full px-3.5 py-2.5 rounded-xl bg-[#0b3c43] text-[#B9D8CE] placeholder-[#B9D8CE]/60 text-xs focus:outline-none focus:ring-2 focus:ring-amber-400"
           />
         </div>
 
         <div className="flex flex-col gap-1">
-          <label className="text-[10px] font-bold text-[#0c2f34] uppercase tracking-wider pl-1">
+          <label className="font-inter text-[10px] font-medium text-[#0c2f34] tracking-wider pl-1">
             Confirmez le mot de passe
           </label>
           <input
@@ -150,12 +150,12 @@ export function RegisterForm() {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
-            className="w-full px-3.5 py-2.5 rounded-xl bg-[#0b3c43] text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-2 focus:ring-amber-400"
+            className="w-full px-3.5 py-2.5 rounded-xl bg-[#0b3c43] text-[#B9D8CE] placeholder-[#B9D8CE]/60 text-xs focus:outline-none focus:ring-2 focus:ring-amber-400"
           />
         </div>
 
         <div className="flex flex-col gap-1">
-          <label className="text-[10px] font-bold text-[#0c2f34] uppercase tracking-wider pl-1">
+          <label className="font-inter text-[10px] font-medium text-[#0c2f34] tracking-wider pl-1">
             Téléphone (Optionnel)
           </label>
           <input
@@ -163,13 +163,13 @@ export function RegisterForm() {
             placeholder="06 00 00 00 00"
             value={telephone}
             onChange={(e) => setTelephone(e.target.value)}
-            className="w-full px-3.5 py-2.5 rounded-xl bg-[#0b3c43] text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-2 focus:ring-amber-400"
+            className="w-full px-3.5 py-2.5 rounded-xl bg-[#0b3c43] text-[#B9D8CE] placeholder-[#B9D8CE]/60 text-xs focus:outline-none focus:ring-2 focus:ring-amber-400"
           />
         </div>
 
         <button
           type="submit"
-          className="w-full mt-2 py-3 rounded-full bg-[#f3b300] hover:bg-[#e0a400] text-[#0b3c43] font-extrabold text-xs tracking-wide uppercase transition-all shadow-md active:scale-[0.98]"
+          className="font-inter w-full mt-2 py-3 rounded-full bg-[#f3b300] hover:bg-[#e0a400] text-[#0b3c43] font-normal text-xs tracking-wide transition-all shadow-md active:scale-[0.98]"
         >
           Créer mon compte
         </button>

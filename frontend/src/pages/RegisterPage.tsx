@@ -5,11 +5,12 @@ import { RegisterForm } from "../components/RegisterForm";
 
 export function RegisterPage() {
   return (
-    <div className="flex min-h-screen w-full bg-[#f8fafc] font-sans overflow-hidden">
+    <div className="flex min-h-screen w-full bg-[#FDFBF7] font-sans overflow-hidden">
       <div
         className="hidden md:flex md:w-1/2 flex-col justify-between p-12 text-white bg-cover bg-center relative rounded-r-3xl z-10"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45)), url(${heroSurf})`,
+          boxShadow: "inset 0px 4px 4px rgba(0, 0, 0, 0.25)",
         }}
       >
         <div>
