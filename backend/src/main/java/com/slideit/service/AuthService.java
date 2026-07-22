@@ -38,10 +38,10 @@ public class AuthService {
 
     public AuthResponseDto login(LoginRequestDto request) {
         User user = userRepository.findByEmail(request.getEmail())
-                .orElseThrow(() -> new IllegalArgumentException("Erreur : Indentifiants incorrects !"));
+                .orElseThrow(() -> new IllegalArgumentException("Identifiants incorrects !"));
 
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
-            throw new IllegalArgumentException("Erreur : Indentifiants incorrects !");
+            throw new IllegalArgumentException("Identifiants incorrects !");
         }
 
         String fakeJwtToken = "fake-jwt-token-for-" + user.getEmail();
